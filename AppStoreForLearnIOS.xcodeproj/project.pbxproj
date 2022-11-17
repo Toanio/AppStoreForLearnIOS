@@ -14,6 +14,7 @@
 		B0FB0D0429253E1700F2EE9A /* AppStoreForLearnIOS.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = B0FB0D0229253E1700F2EE9A /* AppStoreForLearnIOS.xcdatamodeld */; };
 		B0FB0D0629253E1B00F2EE9A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B0FB0D0529253E1B00F2EE9A /* Assets.xcassets */; };
 		B0FB0D0929253E1B00F2EE9A /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B0FB0D0729253E1B00F2EE9A /* LaunchScreen.storyboard */; };
+		B0FB0D1129253ED100F2EE9A /* BaseTapBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0FB0D1029253ED100F2EE9A /* BaseTapBarController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -26,6 +27,7 @@
 		B0FB0D0529253E1B00F2EE9A /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		B0FB0D0829253E1B00F2EE9A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		B0FB0D0A29253E1B00F2EE9A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		B0FB0D1029253ED100F2EE9A /* BaseTapBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseTapBarController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -66,6 +68,7 @@
 				B0FB0D0729253E1B00F2EE9A /* LaunchScreen.storyboard */,
 				B0FB0D0A29253E1B00F2EE9A /* Info.plist */,
 				B0FB0D0229253E1700F2EE9A /* AppStoreForLearnIOS.xcdatamodeld */,
+				B0FB0D1029253ED100F2EE9A /* BaseTapBarController.swift */,
 			);
 			path = AppStoreForLearnIOS;
 			sourceTree = "<group>";
@@ -145,6 +148,7 @@
 				B0FB0CFE29253E1700F2EE9A /* ViewController.swift in Sources */,
 				B0FB0CFA29253E1700F2EE9A /* AppDelegate.swift in Sources */,
 				B0FB0CFC29253E1700F2EE9A /* SceneDelegate.swift in Sources */,
+				B0FB0D1129253ED100F2EE9A /* BaseTapBarController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
