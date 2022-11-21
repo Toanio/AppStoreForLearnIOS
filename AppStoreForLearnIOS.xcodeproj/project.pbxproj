@@ -18,6 +18,7 @@
 		B0FB0D1429279D9A00F2EE9A /* AppsSearchController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0FB0D1329279D9A00F2EE9A /* AppsSearchController.swift */; };
 		B0FB0D17292BADB800F2EE9A /* SearchResultCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0FB0D16292BADB800F2EE9A /* SearchResultCell.swift */; };
 		B0FB0D1A292BBA0D00F2EE9A /* UIView+Layout.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0FB0D19292BBA0D00F2EE9A /* UIView+Layout.swift */; };
+		B0FB0D1C292BC5E300F2EE9A /* VerticalStackView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0FB0D1B292BC5E300F2EE9A /* VerticalStackView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -34,6 +35,7 @@
 		B0FB0D1329279D9A00F2EE9A /* AppsSearchController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppsSearchController.swift; sourceTree = "<group>"; };
 		B0FB0D16292BADB800F2EE9A /* SearchResultCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchResultCell.swift; sourceTree = "<group>"; };
 		B0FB0D19292BBA0D00F2EE9A /* UIView+Layout.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "UIView+Layout.swift"; path = "../../../../Downloads/UIView+Layout.swift"; sourceTree = "<group>"; };
+		B0FB0D1B292BC5E300F2EE9A /* VerticalStackView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VerticalStackView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -102,6 +104,7 @@
 			isa = PBXGroup;
 			children = (
 				B0FB0D19292BBA0D00F2EE9A /* UIView+Layout.swift */,
+				B0FB0D1B292BC5E300F2EE9A /* VerticalStackView.swift */,
 			);
 			path = Helpers;
 			sourceTree = "<group>";
@@ -178,6 +181,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				B0FB0D17292BADB800F2EE9A /* SearchResultCell.swift in Sources */,
+				B0FB0D1C292BC5E300F2EE9A /* VerticalStackView.swift in Sources */,
 				B0FB0D0429253E1700F2EE9A /* AppStoreForLearnIOS.xcdatamodeld in Sources */,
 				B0FB0CFE29253E1700F2EE9A /* ViewController.swift in Sources */,
 				B0FB0CFA29253E1700F2EE9A /* AppDelegate.swift in Sources */,
