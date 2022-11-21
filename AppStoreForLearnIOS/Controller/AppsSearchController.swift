@@ -1,0 +1,43 @@
+//
+//  AppsSearchController.swift
+//  AppStoreForLearnIOS
+//
+//  Created by c.toan on 18.11.2022.
+//
+
+import UIKit
+
+private let reuseIdentifier = "Cell"
+
+class AppsSearchController: UICollectionViewController, UICollectionViewDelegateFlowLayout {
+
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        
+        collectionView.backgroundColor = .white
+        
+        collectionView.register(SearchResultCell.self, forCellWithReuseIdentifier: reuseIdentifier)
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
+        return .init(width: view.bounds.width, height: 250)
+    }
+    override func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+        return 5
+    }
+    
+    override func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: reuseIdentifier, for: indexPath)
+        return cell
+    }
+    
+    init() {
+        super.init(collectionViewLayout: UICollectionViewFlowLayout())
+    }
+    
+    required init?(coder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
+    }
+    
+    
+}

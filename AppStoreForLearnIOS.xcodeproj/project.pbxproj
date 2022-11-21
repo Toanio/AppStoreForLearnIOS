@@ -15,6 +15,9 @@
 		B0FB0D0629253E1B00F2EE9A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B0FB0D0529253E1B00F2EE9A /* Assets.xcassets */; };
 		B0FB0D0929253E1B00F2EE9A /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B0FB0D0729253E1B00F2EE9A /* LaunchScreen.storyboard */; };
 		B0FB0D1129253ED100F2EE9A /* BaseTapBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0FB0D1029253ED100F2EE9A /* BaseTapBarController.swift */; };
+		B0FB0D1429279D9A00F2EE9A /* AppsSearchController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0FB0D1329279D9A00F2EE9A /* AppsSearchController.swift */; };
+		B0FB0D17292BADB800F2EE9A /* SearchResultCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0FB0D16292BADB800F2EE9A /* SearchResultCell.swift */; };
+		B0FB0D1A292BBA0D00F2EE9A /* UIView+Layout.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0FB0D19292BBA0D00F2EE9A /* UIView+Layout.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -28,6 +31,9 @@
 		B0FB0D0829253E1B00F2EE9A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		B0FB0D0A29253E1B00F2EE9A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		B0FB0D1029253ED100F2EE9A /* BaseTapBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseTapBarController.swift; sourceTree = "<group>"; };
+		B0FB0D1329279D9A00F2EE9A /* AppsSearchController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppsSearchController.swift; sourceTree = "<group>"; };
+		B0FB0D16292BADB800F2EE9A /* SearchResultCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchResultCell.swift; sourceTree = "<group>"; };
+		B0FB0D19292BBA0D00F2EE9A /* UIView+Layout.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "UIView+Layout.swift"; path = "../../../../Downloads/UIView+Layout.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -60,6 +66,9 @@
 		B0FB0CF829253E1700F2EE9A /* AppStoreForLearnIOS */ = {
 			isa = PBXGroup;
 			children = (
+				B0FB0D18292BB9C200F2EE9A /* Helpers */,
+				B0FB0D15292B950F00F2EE9A /* Views */,
+				B0FB0D1229279D6D00F2EE9A /* Controller */,
 				B0FB0CF929253E1700F2EE9A /* AppDelegate.swift */,
 				B0FB0CFB29253E1700F2EE9A /* SceneDelegate.swift */,
 				B0FB0CFD29253E1700F2EE9A /* ViewController.swift */,
@@ -68,9 +77,33 @@
 				B0FB0D0729253E1B00F2EE9A /* LaunchScreen.storyboard */,
 				B0FB0D0A29253E1B00F2EE9A /* Info.plist */,
 				B0FB0D0229253E1700F2EE9A /* AppStoreForLearnIOS.xcdatamodeld */,
-				B0FB0D1029253ED100F2EE9A /* BaseTapBarController.swift */,
 			);
 			path = AppStoreForLearnIOS;
+			sourceTree = "<group>";
+		};
+		B0FB0D1229279D6D00F2EE9A /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				B0FB0D1029253ED100F2EE9A /* BaseTapBarController.swift */,
+				B0FB0D1329279D9A00F2EE9A /* AppsSearchController.swift */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		B0FB0D15292B950F00F2EE9A /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				B0FB0D16292BADB800F2EE9A /* SearchResultCell.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		B0FB0D18292BB9C200F2EE9A /* Helpers */ = {
+			isa = PBXGroup;
+			children = (
+				B0FB0D19292BBA0D00F2EE9A /* UIView+Layout.swift */,
+			);
+			path = Helpers;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -144,11 +177,14 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B0FB0D17292BADB800F2EE9A /* SearchResultCell.swift in Sources */,
 				B0FB0D0429253E1700F2EE9A /* AppStoreForLearnIOS.xcdatamodeld in Sources */,
 				B0FB0CFE29253E1700F2EE9A /* ViewController.swift in Sources */,
 				B0FB0CFA29253E1700F2EE9A /* AppDelegate.swift in Sources */,
+				B0FB0D1429279D9A00F2EE9A /* AppsSearchController.swift in Sources */,
 				B0FB0CFC29253E1700F2EE9A /* SceneDelegate.swift in Sources */,
 				B0FB0D1129253ED100F2EE9A /* BaseTapBarController.swift in Sources */,
+				B0FB0D1A292BBA0D00F2EE9A /* UIView+Layout.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
