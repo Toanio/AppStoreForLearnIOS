@@ -19,6 +19,7 @@
 		B0FB0D17292BADB800F2EE9A /* SearchResultCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0FB0D16292BADB800F2EE9A /* SearchResultCell.swift */; };
 		B0FB0D1A292BBA0D00F2EE9A /* UIView+Layout.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0FB0D19292BBA0D00F2EE9A /* UIView+Layout.swift */; };
 		B0FB0D1C292BC5E300F2EE9A /* VerticalStackView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0FB0D1B292BC5E300F2EE9A /* VerticalStackView.swift */; };
+		B0FB0D1F292C956000F2EE9A /* SearchResult.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0FB0D1E292C956000F2EE9A /* SearchResult.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -36,6 +37,7 @@
 		B0FB0D16292BADB800F2EE9A /* SearchResultCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchResultCell.swift; sourceTree = "<group>"; };
 		B0FB0D19292BBA0D00F2EE9A /* UIView+Layout.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "UIView+Layout.swift"; path = "../../../../Downloads/UIView+Layout.swift"; sourceTree = "<group>"; };
 		B0FB0D1B292BC5E300F2EE9A /* VerticalStackView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VerticalStackView.swift; sourceTree = "<group>"; };
+		B0FB0D1E292C956000F2EE9A /* SearchResult.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchResult.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -68,6 +70,7 @@
 		B0FB0CF829253E1700F2EE9A /* AppStoreForLearnIOS */ = {
 			isa = PBXGroup;
 			children = (
+				B0FB0D1D292C954C00F2EE9A /* Model */,
 				B0FB0D18292BB9C200F2EE9A /* Helpers */,
 				B0FB0D15292B950F00F2EE9A /* Views */,
 				B0FB0D1229279D6D00F2EE9A /* Controller */,
@@ -107,6 +110,14 @@
 				B0FB0D1B292BC5E300F2EE9A /* VerticalStackView.swift */,
 			);
 			path = Helpers;
+			sourceTree = "<group>";
+		};
+		B0FB0D1D292C954C00F2EE9A /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				B0FB0D1E292C956000F2EE9A /* SearchResult.swift */,
+			);
+			path = Model;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -182,6 +193,7 @@
 			files = (
 				B0FB0D17292BADB800F2EE9A /* SearchResultCell.swift in Sources */,
 				B0FB0D1C292BC5E300F2EE9A /* VerticalStackView.swift in Sources */,
+				B0FB0D1F292C956000F2EE9A /* SearchResult.swift in Sources */,
 				B0FB0D0429253E1700F2EE9A /* AppStoreForLearnIOS.xcdatamodeld in Sources */,
 				B0FB0CFE29253E1700F2EE9A /* ViewController.swift in Sources */,
 				B0FB0CFA29253E1700F2EE9A /* AppDelegate.swift in Sources */,
