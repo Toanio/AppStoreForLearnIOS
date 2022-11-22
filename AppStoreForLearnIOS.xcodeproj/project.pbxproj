@@ -21,6 +21,7 @@
 		B0FB0D1C292BC5E300F2EE9A /* VerticalStackView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0FB0D1B292BC5E300F2EE9A /* VerticalStackView.swift */; };
 		B0FB0D1F292C956000F2EE9A /* SearchResult.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0FB0D1E292C956000F2EE9A /* SearchResult.swift */; };
 		B0FB0D22292C9ECA00F2EE9A /* Services.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0FB0D21292C9ECA00F2EE9A /* Services.swift */; };
+		B8F96F5631702B2B4E507BAE /* Pods_AppStoreForLearnIOS.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = ED192073E06A9A3FD7C836A4 /* Pods_AppStoreForLearnIOS.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -40,6 +41,9 @@
 		B0FB0D1B292BC5E300F2EE9A /* VerticalStackView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VerticalStackView.swift; sourceTree = "<group>"; };
 		B0FB0D1E292C956000F2EE9A /* SearchResult.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchResult.swift; sourceTree = "<group>"; };
 		B0FB0D21292C9ECA00F2EE9A /* Services.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Services.swift; sourceTree = "<group>"; };
+		C06B3C817B0697E466DBB814 /* Pods-AppStoreForLearnIOS.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AppStoreForLearnIOS.release.xcconfig"; path = "Target Support Files/Pods-AppStoreForLearnIOS/Pods-AppStoreForLearnIOS.release.xcconfig"; sourceTree = "<group>"; };
+		D6F732433E8C7F8522CF9367 /* Pods-AppStoreForLearnIOS.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AppStoreForLearnIOS.debug.xcconfig"; path = "Target Support Files/Pods-AppStoreForLearnIOS/Pods-AppStoreForLearnIOS.debug.xcconfig"; sourceTree = "<group>"; };
+		ED192073E06A9A3FD7C836A4 /* Pods_AppStoreForLearnIOS.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_AppStoreForLearnIOS.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -47,17 +51,28 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B8F96F5631702B2B4E507BAE /* Pods_AppStoreForLearnIOS.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		7BDE18F3938FDB29FDCD083E /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				ED192073E06A9A3FD7C836A4 /* Pods_AppStoreForLearnIOS.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		B0FB0CED29253E1700F2EE9A = {
 			isa = PBXGroup;
 			children = (
 				B0FB0CF829253E1700F2EE9A /* AppStoreForLearnIOS */,
 				B0FB0CF729253E1700F2EE9A /* Products */,
+				D989165582A89D51C986235E /* Pods */,
+				7BDE18F3938FDB29FDCD083E /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -131,6 +146,16 @@
 			path = Services;
 			sourceTree = "<group>";
 		};
+		D989165582A89D51C986235E /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				D6F732433E8C7F8522CF9367 /* Pods-AppStoreForLearnIOS.debug.xcconfig */,
+				C06B3C817B0697E466DBB814 /* Pods-AppStoreForLearnIOS.release.xcconfig */,
+			);
+			name = Pods;
+			path = Pods;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -138,9 +163,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = B0FB0D0D29253E1B00F2EE9A /* Build configuration list for PBXNativeTarget "AppStoreForLearnIOS" */;
 			buildPhases = (
+				549BCED7AF19F1AC1EB00402 /* [CP] Check Pods Manifest.lock */,
 				B0FB0CF229253E1700F2EE9A /* Sources */,
 				B0FB0CF329253E1700F2EE9A /* Frameworks */,
 				B0FB0CF429253E1700F2EE9A /* Resources */,
+				30514BA9611F3AA286F8B9D8 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -196,6 +223,48 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		30514BA9611F3AA286F8B9D8 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-AppStoreForLearnIOS/Pods-AppStoreForLearnIOS-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-AppStoreForLearnIOS/Pods-AppStoreForLearnIOS-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-AppStoreForLearnIOS/Pods-AppStoreForLearnIOS-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		549BCED7AF19F1AC1EB00402 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-AppStoreForLearnIOS-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		B0FB0CF229253E1700F2EE9A /* Sources */ = {
@@ -354,6 +423,7 @@
 		};
 		B0FB0D0E29253E1B00F2EE9A /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = D6F732433E8C7F8522CF9367 /* Pods-AppStoreForLearnIOS.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -381,6 +451,7 @@
 		};
 		B0FB0D0F29253E1B00F2EE9A /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = C06B3C817B0697E466DBB814 /* Pods-AppStoreForLearnIOS.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
