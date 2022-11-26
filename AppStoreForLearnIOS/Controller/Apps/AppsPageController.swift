@@ -18,6 +18,18 @@ class AppsPageController: BaseListController, UICollectionViewDelegateFlowLayout
         collectionView.register(AppsGroupCell.self, forCellWithReuseIdentifier: identifier)
         
         collectionView.register(AppsPageHeader.self, forSupplementaryViewOfKind: UICollectionView.elementKindSectionHeader, withReuseIdentifier: headerId)
+        
+        fetchData()
+    }
+    
+    private func fetchData() {
+        Services.shared.fetchFreeApps { appGroup, error in
+            if let error = error {
+                return
+            }
+            
+            print(appGroup?.feed.results)
+        }
     }
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, referenceSizeForHeaderInSection section: Int) -> CGSize {

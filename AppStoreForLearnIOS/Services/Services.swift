@@ -31,6 +31,27 @@ class Services {
             
         }.resume()
     }
+    
+    func fetchFreeApps(complition: @escaping (AppsGroupResult? , Error?) -> ()) {
+        guard let url = URL(string: "https://rss.applemarketingtools.com/api/v2/us/apps/top-free/10/apps.json") else { return }
+        
+        URLSession.shared.dataTask(with: url) { data, response, error in
+           if let error = error {
+               complition(nil, error)
+                return
+            }
+            do {
+                let appsResult = try JSONDecoder().decode(AppsGroupResult.self, from: data!)
+                complition(appsResult, nil)
+            } catch {
+                print("Failed to fetch ", error)
+            }
+            
+            
+            
+            
+        }.resume()
+    }
 }
 
 
