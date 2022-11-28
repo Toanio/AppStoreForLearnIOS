@@ -42,6 +42,7 @@ class Services {
             }
             do {
                 let appsResult = try JSONDecoder().decode(AppsGroupResult.self, from: data!)
+                appsResult.feed.results.forEach({print($0.name)})
                 complition(appsResult, nil)
             } catch {
                 print("Failed to fetch ", error)
