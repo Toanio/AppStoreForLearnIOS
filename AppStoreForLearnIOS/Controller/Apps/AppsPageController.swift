@@ -22,20 +22,50 @@ class AppsPageController: BaseListController, UICollectionViewDelegateFlowLayout
         fetchData()
     }
     
-    var editorTopFreeApps: AppsGroupResult?
+    
+    
+    var groups = [AppsGroupResult]()
     
     private func fetchData() {
+        var group1: AppsGroupResult?
+        var group2: AppsGroupResult?
+        var group3: AppsGroupResult?
+        
+        let dispatchGroup = DispatchGroup()
+        dispatchGroup.enter()
         Services.shared.fetchFreeApps { appGroup, error in
-            if let error = error {
-                print("failed fetching: ", error)
-                return
+            print("Done with Free Apps")
+            dispatchGroup.leave()
+            group1 = appGroup
+        }
+        dispatchGroup.enter()
+        Services.shared.fetchFreeBooks { appGroup, error in
+            print("Done with Free Books")
+            dispatchGroup.leave()
+           group2 = appGroup
+        }
+        dispatchGroup.enter()
+        Services.shared.fetchMostPlayedMusic { appGroup, error in
+            print("Done with Music")
+            dispatchGroup.leave()
+            group3 = appGroup
+        }
+        dispatchGroup.notify(queue: .main) {
+            print("Completed dispatch task...")
+            
+            if let group = group1 {
+                self.groups.append(group)
             }
             
-            self.editorTopFreeApps = appGroup
-            DispatchQueue.main.async {
-                self.collectionView.reloadData()
+            if let group = group2 {
+                self.groups.append(group)
             }
-            //print(appGroup?.feed.title)
+            
+            if let group = group3 {
+                self.groups.append(group)
+            }
+            
+            self.collectionView.reloadData()
         }
     }
     
@@ -49,14 +79,16 @@ class AppsPageController: BaseListController, UICollectionViewDelegateFlowLayout
     }
     
     override func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return 1
+        return groups.count
         
     }
     
     override func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: identifier, for: indexPath) as! AppsGroupCell
-        cell.titleLabel.text = editorTopFreeApps?.feed.title
-        cell.horizontalController.appGroup = editorTopFreeApps
+        let appGroup = groups[indexPath.row]
+        
+        cell.titleLabel.text = appGroup.feed.title
+        cell.horizontalController.appGroup = appGroup
         cell.horizontalController.collectionView.reloadData()
         return cell
     }
