@@ -9,7 +9,7 @@ import UIKit
 
 class AppsPageController: BaseListController, UICollectionViewDelegateFlowLayout {
     let identifier = "id"
-    let headerId = "headerId"
+    let headerId = "headerId" 
     
     let activityIndicatorView: UIActivityIndicatorView = {
         let aiv = UIActivityIndicatorView(style: .medium)
