@@ -9,7 +9,7 @@ import UIKit
 
 class AppsPageController: BaseListController, UICollectionViewDelegateFlowLayout {
     let identifier = "id"
-    let headerId = "headerId" 
+    let headerId = "headerId"
     
     let activityIndicatorView: UIActivityIndicatorView = {
         let aiv = UIActivityIndicatorView(style: .medium)
@@ -111,6 +111,11 @@ class AppsPageController: BaseListController, UICollectionViewDelegateFlowLayout
         cell.titleLabel.text = appGroup.feed.title
         cell.horizontalController.appGroup = appGroup
         cell.horizontalController.collectionView.reloadData()
+        cell.horizontalController.didSelectHandler = { appResult in
+            let controller = AppDetailController()
+            controller.navigationItem.title = appResult.name
+            self.navigationController?.pushViewController(controller, animated: true)
+        }
         return cell
     }
     
