@@ -32,6 +32,8 @@
 		B0FB0D37293119A900F2EE9A /* AppsHeaderCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0FB0D36293119A900F2EE9A /* AppsHeaderCell.swift */; };
 		B0FB0D392931E83C00F2EE9A /* AppsGroupResult.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0FB0D382931E83C00F2EE9A /* AppsGroupResult.swift */; };
 		B0FB0D3B2936742D00F2EE9A /* SocialApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0FB0D3A2936742D00F2EE9A /* SocialApp.swift */; };
+		B0FB0D41293A412000F2EE9A /* HorizontallSnappingController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0FB0D40293A412000F2EE9A /* HorizontallSnappingController.swift */; };
+		B0FB0D43293A416500F2EE9A /* BetterSnappingLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0FB0D42293A416500F2EE9A /* BetterSnappingLayout.swift */; };
 		B8F96F5631702B2B4E507BAE /* Pods_AppStoreForLearnIOS.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = ED192073E06A9A3FD7C836A4 /* Pods_AppStoreForLearnIOS.framework */; };
 /* End PBXBuildFile section */
 
@@ -63,6 +65,8 @@
 		B0FB0D36293119A900F2EE9A /* AppsHeaderCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppsHeaderCell.swift; sourceTree = "<group>"; };
 		B0FB0D382931E83C00F2EE9A /* AppsGroupResult.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppsGroupResult.swift; sourceTree = "<group>"; };
 		B0FB0D3A2936742D00F2EE9A /* SocialApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SocialApp.swift; sourceTree = "<group>"; };
+		B0FB0D40293A412000F2EE9A /* HorizontallSnappingController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HorizontallSnappingController.swift; sourceTree = "<group>"; };
+		B0FB0D42293A416500F2EE9A /* BetterSnappingLayout.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BetterSnappingLayout.swift; sourceTree = "<group>"; };
 		C06B3C817B0697E466DBB814 /* Pods-AppStoreForLearnIOS.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AppStoreForLearnIOS.release.xcconfig"; path = "Target Support Files/Pods-AppStoreForLearnIOS/Pods-AppStoreForLearnIOS.release.xcconfig"; sourceTree = "<group>"; };
 		D6F732433E8C7F8522CF9367 /* Pods-AppStoreForLearnIOS.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AppStoreForLearnIOS.debug.xcconfig"; path = "Target Support Files/Pods-AppStoreForLearnIOS/Pods-AppStoreForLearnIOS.debug.xcconfig"; sourceTree = "<group>"; };
 		ED192073E06A9A3FD7C836A4 /* Pods_AppStoreForLearnIOS.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_AppStoreForLearnIOS.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -152,6 +156,7 @@
 				B0FB0D19292BBA0D00F2EE9A /* UIView+Layout.swift */,
 				B0FB0D1B292BC5E300F2EE9A /* VerticalStackView.swift */,
 				B0FB0D302930F79E00F2EE9A /* Extensions.swift */,
+				B0FB0D42293A416500F2EE9A /* BetterSnappingLayout.swift */,
 			);
 			path = Helpers;
 			sourceTree = "<group>";
@@ -180,6 +185,7 @@
 				B0FB0D24292E5DFB00F2EE9A /* AppsPageController.swift */,
 				B0FB0D2C292FB69E00F2EE9A /* AppsHorizontalController.swift */,
 				B0FB0D342931163400F2EE9A /* AppsHeaderHorizontalController.swift */,
+				B0FB0D40293A412000F2EE9A /* HorizontallSnappingController.swift */,
 			);
 			path = Apps;
 			sourceTree = "<group>";
@@ -336,6 +342,7 @@
 				B0FB0D0429253E1700F2EE9A /* AppStoreForLearnIOS.xcdatamodeld in Sources */,
 				B0FB0D2D292FB69E00F2EE9A /* AppsHorizontalController.swift in Sources */,
 				B0FB0D27292E5E7500F2EE9A /* BaseListController.swift in Sources */,
+				B0FB0D43293A416500F2EE9A /* BetterSnappingLayout.swift in Sources */,
 				B0FB0CFE29253E1700F2EE9A /* ViewController.swift in Sources */,
 				B0FB0D2B292E612A00F2EE9A /* AppsGroupCell.swift in Sources */,
 				B0FB0D352931163400F2EE9A /* AppsHeaderHorizontalController.swift in Sources */,
@@ -349,6 +356,7 @@
 				B0FB0D1A292BBA0D00F2EE9A /* UIView+Layout.swift in Sources */,
 				B0FB0D392931E83C00F2EE9A /* AppsGroupResult.swift in Sources */,
 				B0FB0D25292E5DFB00F2EE9A /* AppsPageController.swift in Sources */,
+				B0FB0D41293A412000F2EE9A /* HorizontallSnappingController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
