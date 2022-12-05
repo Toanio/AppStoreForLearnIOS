@@ -13,6 +13,7 @@ class AppsHorizontalController: HorizontallSnappingController, UICollectionViewD
     var appGroup: AppsGroupResult?
     var didSelectHandler: ((AppsResult) -> ())?
     
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         

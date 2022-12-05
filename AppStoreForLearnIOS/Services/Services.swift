@@ -17,7 +17,7 @@ class Services {
     }
     
     func fetchFreeApps(complition: @escaping (AppsGroupResult? , Error?) -> ()) {
-      let urlString = "https://rss.applemarketingtools.com/api/v2/us/apps/top-free/10/apps.json"
+      let urlString = "https://rss.applemarketingtools.com/api/v2/ru/apps/top-free/10/apps.json"
         fetchGenericJSONData(urlString: urlString, complition: complition)
     }
     
