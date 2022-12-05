@@ -36,6 +36,8 @@
 		B0FB0D43293A416500F2EE9A /* BetterSnappingLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0FB0D42293A416500F2EE9A /* BetterSnappingLayout.swift */; };
 		B0FB0D46293A4DF700F2EE9A /* AppDetailController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0FB0D45293A4DF700F2EE9A /* AppDetailController.swift */; };
 		B0FB0D48293E2E2E00F2EE9A /* AppDetailCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0FB0D47293E2E2E00F2EE9A /* AppDetailCell.swift */; };
+		B0FB0D4B293E755C00F2EE9A /* PreviewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0FB0D4A293E755C00F2EE9A /* PreviewCell.swift */; };
+		B0FB0D4D293E778600F2EE9A /* PreviewScreenshotController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0FB0D4C293E778600F2EE9A /* PreviewScreenshotController.swift */; };
 		B8F96F5631702B2B4E507BAE /* Pods_AppStoreForLearnIOS.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = ED192073E06A9A3FD7C836A4 /* Pods_AppStoreForLearnIOS.framework */; };
 /* End PBXBuildFile section */
 
@@ -71,6 +73,8 @@
 		B0FB0D42293A416500F2EE9A /* BetterSnappingLayout.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BetterSnappingLayout.swift; sourceTree = "<group>"; };
 		B0FB0D45293A4DF700F2EE9A /* AppDetailController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDetailController.swift; sourceTree = "<group>"; };
 		B0FB0D47293E2E2E00F2EE9A /* AppDetailCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDetailCell.swift; sourceTree = "<group>"; };
+		B0FB0D4A293E755C00F2EE9A /* PreviewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PreviewCell.swift; sourceTree = "<group>"; };
+		B0FB0D4C293E778600F2EE9A /* PreviewScreenshotController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PreviewScreenshotController.swift; sourceTree = "<group>"; };
 		C06B3C817B0697E466DBB814 /* Pods-AppStoreForLearnIOS.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AppStoreForLearnIOS.release.xcconfig"; path = "Target Support Files/Pods-AppStoreForLearnIOS/Pods-AppStoreForLearnIOS.release.xcconfig"; sourceTree = "<group>"; };
 		D6F732433E8C7F8522CF9367 /* Pods-AppStoreForLearnIOS.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AppStoreForLearnIOS.debug.xcconfig"; path = "Target Support Files/Pods-AppStoreForLearnIOS/Pods-AppStoreForLearnIOS.debug.xcconfig"; sourceTree = "<group>"; };
 		ED192073E06A9A3FD7C836A4 /* Pods_AppStoreForLearnIOS.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_AppStoreForLearnIOS.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -219,6 +223,7 @@
 			isa = PBXGroup;
 			children = (
 				B0FB0D45293A4DF700F2EE9A /* AppDetailController.swift */,
+				B0FB0D4C293E778600F2EE9A /* PreviewScreenshotController.swift */,
 			);
 			path = Details;
 			sourceTree = "<group>";
@@ -227,6 +232,7 @@
 			isa = PBXGroup;
 			children = (
 				B0FB0D47293E2E2E00F2EE9A /* AppDetailCell.swift */,
+				B0FB0D4A293E755C00F2EE9A /* PreviewCell.swift */,
 			);
 			path = Details;
 			sourceTree = "<group>";
@@ -358,6 +364,7 @@
 				B0FB0D3B2936742D00F2EE9A /* SocialApp.swift in Sources */,
 				B0FB0D17292BADB800F2EE9A /* SearchResultCell.swift in Sources */,
 				B0FB0D1C292BC5E300F2EE9A /* VerticalStackView.swift in Sources */,
+				B0FB0D4D293E778600F2EE9A /* PreviewScreenshotController.swift in Sources */,
 				B0FB0D1F292C956000F2EE9A /* SearchResult.swift in Sources */,
 				B0FB0D22292C9ECA00F2EE9A /* Services.swift in Sources */,
 				B0FB0D2F2930F63400F2EE9A /* AppRowCell.swift in Sources */,
@@ -373,6 +380,7 @@
 				B0FB0D37293119A900F2EE9A /* AppsHeaderCell.swift in Sources */,
 				B0FB0D1429279D9A00F2EE9A /* AppsSearchController.swift in Sources */,
 				B0FB0CFC29253E1700F2EE9A /* SceneDelegate.swift in Sources */,
+				B0FB0D4B293E755C00F2EE9A /* PreviewCell.swift in Sources */,
 				B0FB0D1129253ED100F2EE9A /* BaseTapBarController.swift in Sources */,
 				B0FB0D46293A4DF700F2EE9A /* AppDetailController.swift in Sources */,
 				B0FB0D312930F79E00F2EE9A /* Extensions.swift in Sources */,
