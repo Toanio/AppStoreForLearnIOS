@@ -19,7 +19,12 @@ class TodayController: BaseListController, UICollectionViewDelegateFlowLayout {
         
         collectionView.register(TodayCell.self, forCellWithReuseIdentifier: cellId)
     }
-    var appFullscreenController: UIViewController!
+    var appFullscreenController: AppFullscreenController!
+    
+    var topConstraint: NSLayoutConstraint?
+    var leadingConstraint: NSLayoutConstraint?
+    var widthConstraint: NSLayoutConstraint?
+    var heightConstrint: NSLayoutConstraint?
     
     override func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         let appFullscreenController = AppFullscreenController()
@@ -38,11 +43,29 @@ class TodayController: BaseListController, UICollectionViewDelegateFlowLayout {
         
         self.startingFrame = startingFrame
         
-        redView.frame = startingFrame
+        //redView.frame = startingFrame
+        redView.translatesAutoresizingMaskIntoConstraints = false
+        topConstraint = redView.topAnchor.constraint(equalTo: view.topAnchor, constant: startingFrame.origin.y )
+        leadingConstraint = redView.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: startingFrame.origin.x )
+        widthConstraint = redView.widthAnchor.constraint(equalToConstant: startingFrame.width)
+        heightConstrint = redView.heightAnchor.constraint(equalToConstant: startingFrame.height)
+        [topConstraint, leadingConstraint, widthConstraint, heightConstrint].forEach({$0?.isActive = true})
+        
+        self.view.layoutIfNeeded()
+        
         redView.layer.cornerRadius = 16
         
         UIView.animate(withDuration: 0.7, delay: 0, usingSpringWithDamping: 0.7, initialSpringVelocity: 0.7, options: .curveEaseOut, animations: {
+            
             redView.frame = self.view.frame
+            
+            self.topConstraint?.constant = 0
+            self.leadingConstraint?.constant = 0
+            self.widthConstraint?.constant = self.view.frame.width
+            self.heightConstrint?.constant = self.view.frame.height
+            
+            self.view.layoutIfNeeded()
+            
             self.tabBarController?.tabBar.isHidden = true
         }, completion: nil)
     }
@@ -51,8 +74,22 @@ class TodayController: BaseListController, UICollectionViewDelegateFlowLayout {
     
     @objc func handleRemoveRedView(gesture: UITapGestureRecognizer) {
         UIView.animate(withDuration: 0.7, delay: 0, usingSpringWithDamping: 0.7, initialSpringVelocity: 0.7, animations: {
-            gesture.view?.frame = self.startingFrame ?? .zero
+            
+            self.appFullscreenController.tableView.contentOffset = .zero
+
+            
+            guard let startingFrame = self.startingFrame else { return }
+            
+            self.topConstraint?.constant = startingFrame.origin.y
+            self.leadingConstraint?.constant = startingFrame.origin.x
+            self.widthConstraint?.constant = startingFrame.width
+            self.heightConstrint?.constant = startingFrame.height
+            
+            self.view.layoutIfNeeded()
+            
+            
             self.tabBarController?.tabBar.isHidden = false
+            
         }, completion: { _ in
             gesture.view?.removeFromSuperview()
             self.appFullscreenController.removeFromParent()
