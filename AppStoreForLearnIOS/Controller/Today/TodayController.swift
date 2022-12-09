@@ -12,7 +12,6 @@ class TodayController: BaseListController, UICollectionViewDelegateFlowLayout {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
         navigationController?.isNavigationBarHidden = true
         
         collectionView.backgroundColor = UIColor(red: 210/255, green: 210/255 , blue: 210/255, alpha: 1 )
@@ -28,10 +27,13 @@ class TodayController: BaseListController, UICollectionViewDelegateFlowLayout {
     
     override func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         let appFullscreenController = AppFullscreenController()
-        let redView = appFullscreenController.view!
+        appFullscreenController.dismissHandler = {
+            self.handleRemoveRedView()
+        }
+        let fullscreenView = appFullscreenController.view!
 
-        redView.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(handleRemoveRedView)))
-        view.addSubview(redView)
+        fullscreenView.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(handleRemoveRedView)))
+        view.addSubview(fullscreenView)
         addChild(appFullscreenController)
         
         
@@ -44,20 +46,20 @@ class TodayController: BaseListController, UICollectionViewDelegateFlowLayout {
         self.startingFrame = startingFrame
         
         //redView.frame = startingFrame
-        redView.translatesAutoresizingMaskIntoConstraints = false
-        topConstraint = redView.topAnchor.constraint(equalTo: view.topAnchor, constant: startingFrame.origin.y )
-        leadingConstraint = redView.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: startingFrame.origin.x )
-        widthConstraint = redView.widthAnchor.constraint(equalToConstant: startingFrame.width)
-        heightConstrint = redView.heightAnchor.constraint(equalToConstant: startingFrame.height)
+        fullscreenView.translatesAutoresizingMaskIntoConstraints = false
+        topConstraint = fullscreenView.topAnchor.constraint(equalTo: view.topAnchor, constant: startingFrame.origin.y )
+        leadingConstraint = fullscreenView.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: startingFrame.origin.x )
+        widthConstraint = fullscreenView.widthAnchor.constraint(equalToConstant: startingFrame.width)
+        heightConstrint = fullscreenView.heightAnchor.constraint(equalToConstant: startingFrame.height)
         [topConstraint, leadingConstraint, widthConstraint, heightConstrint].forEach({$0?.isActive = true})
         
         self.view.layoutIfNeeded()
         
-        redView.layer.cornerRadius = 16
+        fullscreenView.layer.cornerRadius = 16
         
         UIView.animate(withDuration: 0.7, delay: 0, usingSpringWithDamping: 0.7, initialSpringVelocity: 0.7, options: .curveEaseOut, animations: {
             
-            redView.frame = self.view.frame
+            fullscreenView.frame = self.view.frame
             
             self.topConstraint?.constant = 0
             self.leadingConstraint?.constant = 0
@@ -72,7 +74,7 @@ class TodayController: BaseListController, UICollectionViewDelegateFlowLayout {
     
     var startingFrame: CGRect?
     
-    @objc func handleRemoveRedView(gesture: UITapGestureRecognizer) {
+    @objc func handleRemoveRedView() {
         UIView.animate(withDuration: 0.7, delay: 0, usingSpringWithDamping: 0.7, initialSpringVelocity: 0.7, animations: {
             
             self.appFullscreenController.tableView.contentOffset = .zero
@@ -91,7 +93,8 @@ class TodayController: BaseListController, UICollectionViewDelegateFlowLayout {
             self.tabBarController?.tabBar.isHidden = false
             
         }, completion: { _ in
-            gesture.view?.removeFromSuperview()
+            //gesture.view?.removeFromSuperview()
+            self.appFullscreenController.view.removeFromSuperview()
             self.appFullscreenController.removeFromParent()
         })
     }
