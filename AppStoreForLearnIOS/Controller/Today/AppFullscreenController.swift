@@ -18,6 +18,9 @@ class AppFullscreenController: UITableViewController {
         tableView.tableFooterView = UIView()
         tableView.separatorStyle = .none
         tableView.allowsSelection = false
+        tableView.contentInsetAdjustmentBehavior = .never
+        //let height = UIApplication.shared.statusBarFrame.height
+        tableView.contentInset = .init(top: 0, left: 0, bottom: 0, right: 0)
     }
     
   
@@ -30,6 +33,7 @@ class AppFullscreenController: UITableViewController {
             let headerCell = AppFullscreenHeaderCell()
             headerCell.closeButton.addTarget(self, action: #selector(handleDismiss), for: .touchUpInside)
             headerCell.todayCell.todayItem = todayItem
+            headerCell.todayCell.layer.cornerRadius = 0
             return headerCell
         }
         let cell = AppFullscreenDescriptionCell()
