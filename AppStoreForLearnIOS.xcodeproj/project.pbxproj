@@ -47,6 +47,7 @@
 		B0FB0D5D29421C3000F2EE9A /* AppFullscreenController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0FB0D5C29421C3000F2EE9A /* AppFullscreenController.swift */; };
 		B0FB0D5F294229EC00F2EE9A /* AppFullscreenDescriptionCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0FB0D5E294229EC00F2EE9A /* AppFullscreenDescriptionCell.swift */; };
 		B0FB0D612943639900F2EE9A /* AppFullscreenHeaderCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0FB0D602943639900F2EE9A /* AppFullscreenHeaderCell.swift */; };
+		B0FB0D6329438D3F00F2EE9A /* TodayItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0FB0D6229438D3F00F2EE9A /* TodayItem.swift */; };
 		B8F96F5631702B2B4E507BAE /* Pods_AppStoreForLearnIOS.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = ED192073E06A9A3FD7C836A4 /* Pods_AppStoreForLearnIOS.framework */; };
 /* End PBXBuildFile section */
 
@@ -93,6 +94,7 @@
 		B0FB0D5C29421C3000F2EE9A /* AppFullscreenController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppFullscreenController.swift; sourceTree = "<group>"; };
 		B0FB0D5E294229EC00F2EE9A /* AppFullscreenDescriptionCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppFullscreenDescriptionCell.swift; sourceTree = "<group>"; };
 		B0FB0D602943639900F2EE9A /* AppFullscreenHeaderCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppFullscreenHeaderCell.swift; sourceTree = "<group>"; };
+		B0FB0D6229438D3F00F2EE9A /* TodayItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TodayItem.swift; sourceTree = "<group>"; };
 		C06B3C817B0697E466DBB814 /* Pods-AppStoreForLearnIOS.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AppStoreForLearnIOS.release.xcconfig"; path = "Target Support Files/Pods-AppStoreForLearnIOS/Pods-AppStoreForLearnIOS.release.xcconfig"; sourceTree = "<group>"; };
 		D6F732433E8C7F8522CF9367 /* Pods-AppStoreForLearnIOS.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AppStoreForLearnIOS.debug.xcconfig"; path = "Target Support Files/Pods-AppStoreForLearnIOS/Pods-AppStoreForLearnIOS.debug.xcconfig"; sourceTree = "<group>"; };
 		ED192073E06A9A3FD7C836A4 /* Pods_AppStoreForLearnIOS.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_AppStoreForLearnIOS.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -196,6 +198,7 @@
 				B0FB0D382931E83C00F2EE9A /* AppsGroupResult.swift */,
 				B0FB0D3A2936742D00F2EE9A /* SocialApp.swift */,
 				B0FB0D54293F817000F2EE9A /* Reviews.swift */,
+				B0FB0D6229438D3F00F2EE9A /* TodayItem.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -404,6 +407,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B0FB0D6329438D3F00F2EE9A /* TodayItem.swift in Sources */,
 				B0FB0D3B2936742D00F2EE9A /* SocialApp.swift in Sources */,
 				B0FB0D17292BADB800F2EE9A /* SearchResultCell.swift in Sources */,
 				B0FB0D1C292BC5E300F2EE9A /* VerticalStackView.swift in Sources */,

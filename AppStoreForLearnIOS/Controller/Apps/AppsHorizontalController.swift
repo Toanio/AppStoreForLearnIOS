@@ -26,19 +26,19 @@ class AppsHorizontalController: HorizontallSnappingController, UICollectionViewD
     }
     
     override func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        if let app = appGroup?.feed.results[indexPath.row] {
+        if let app = appGroup?.feed?.results[indexPath.row] {
             didSelectHandler?(app)
         }
         
     }
     
     override func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return appGroup?.feed.results.count ?? 0
+        return appGroup?.feed?.results.count ?? 0
     }
     
     override func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: cellId, for: indexPath) as! AppRowCell
-        let app = appGroup?.feed.results[indexPath.row]
+        let app = appGroup?.feed?.results[indexPath.row]
         cell.nameLabel.text = app?.name
         cell.companyLabel.text = app?.artistName
         cell.imageView.sd_setImage(with: URL(string: app?.artworkUrl100 ?? ""))

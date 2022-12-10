@@ -108,7 +108,7 @@ class AppsPageController: BaseListController, UICollectionViewDelegateFlowLayout
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: identifier, for: indexPath) as! AppsGroupCell
         let appGroup = groups[indexPath.row]
         
-        cell.titleLabel.text = appGroup.feed.title
+        cell.titleLabel.text = appGroup.feed?.title
         cell.horizontalController.appGroup = appGroup
         cell.horizontalController.collectionView.reloadData()
         cell.horizontalController.didSelectHandler = { appResult in

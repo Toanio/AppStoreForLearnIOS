@@ -8,7 +8,7 @@
 import Foundation
 
 struct AppsGroupResult: Decodable {
-    let feed: Feed
+    let feed: Feed?
 }
 
 struct Feed: Decodable {
