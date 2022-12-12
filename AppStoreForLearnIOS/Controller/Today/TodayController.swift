@@ -80,6 +80,18 @@ class TodayController: BaseListController, UICollectionViewDelegateFlowLayout {
     var heightConstrint: NSLayoutConstraint?
     
     override func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        
+        if items[indexPath.item].cellType == .multiple {
+            let fullController = TodayMultipleAppController(mode: .fullscreen)
+            fullController.modalPresentationStyle = .fullScreen
+            fullController.result = self.items[indexPath.item].apps
+            present(fullController, animated: true)
+            
+            return
+        }
+        
+        
+        
         let appFullscreenController = AppFullscreenController()
         appFullscreenController.todayItem = items[indexPath.item]
         appFullscreenController.dismissHandler = {
