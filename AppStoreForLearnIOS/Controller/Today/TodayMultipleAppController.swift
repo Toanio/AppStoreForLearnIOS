@@ -22,17 +22,27 @@ class TodayMultipleAppController: BaseListController, UICollectionViewDelegateFl
     @objc func handlerDismiss(button: UIButton) {
         dismiss(animated: true)
     }
+    override func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        let appId = self.result[indexPath.item].id
+        let appDetailController = AppDetailController(appId: appId)
+        navigationController?.pushViewController(appDetailController, animated: true)
+    }
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        
+        tabBarController?.tabBar.superview?.setNeedsLayout()
+    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
         collectionView.backgroundColor = .white
         if mode == .fullscreen {
             setupCloseButton()
+            navigationController?.isNavigationBarHidden = true
         } else {
             collectionView.isScrollEnabled = false
         }
-        
-        
+    
         collectionView.register(MultipleAppCell.self, forCellWithReuseIdentifier: cellId)
         
     }

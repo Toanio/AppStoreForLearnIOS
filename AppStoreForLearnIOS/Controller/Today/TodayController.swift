@@ -83,10 +83,10 @@ class TodayController: BaseListController, UICollectionViewDelegateFlowLayout {
         
         if items[indexPath.item].cellType == .multiple {
             let fullController = TodayMultipleAppController(mode: .fullscreen)
-            fullController.modalPresentationStyle = .fullScreen
             fullController.result = self.items[indexPath.item].apps
-            present(fullController, animated: true)
-            
+            let navController = BackEnabledNavigationController(rootViewController: fullController)
+            navController.modalPresentationStyle = .fullScreen
+            present(navController, animated: true)
             return
         }
         
@@ -187,7 +187,31 @@ class TodayController: BaseListController, UICollectionViewDelegateFlowLayout {
         
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: cellId, for: indexPath) as! BaseTodayCell
         cell.todayItem = items[indexPath.item]
+        
+        (cell as? TodayMultipleAppCell)?.multipleAppController.collectionView.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(handleMultipleAppTap)))
         return cell
+    }
+    //разобраться с этим кодом
+    @objc private func handleMultipleAppTap(gesture: UIGestureRecognizer) {
+        let collectionView = gesture.view
+        
+        
+        
+        var superview = collectionView?.superview
+
+        while superview != nil {
+            if let cell = superview as? TodayMultipleAppCell {
+                guard let indexPath = self.collectionView.indexPath(for: cell) else { return }
+
+                let apps = self.items[indexPath.item].apps
+
+                let fullController = TodayMultipleAppController(mode: .fullscreen)
+                fullController.modalPresentationStyle = .fullScreen
+                fullController.result = apps
+                present(fullController, animated: true)
+            }
+            superview = superview?.superview
+        }
     }
     static let cellSize: CGFloat = 500
     
