@@ -15,6 +15,7 @@ class TodayCell: BaseTodayCell {
             imageView.image = todayItem.image
             descriptionLabel.text = todayItem.description
             backgroundColor = todayItem.backgroundColor
+            backgroundView?.backgroundColor = todayItem.backgroundColor
         }
     }
     let categoryLabel = UILabel(text: "LIFE HACK", font: .boldSystemFont(ofSize: 20))
@@ -37,10 +38,11 @@ class TodayCell: BaseTodayCell {
         layer.cornerRadius = 16
         
         imageView.contentMode = .scaleAspectFill
-        clipsToBounds = true
         let imageContainerView = UIView()
         imageContainerView.addSubview(imageView)
+        
         imageView.centerInSuperview(size: .init(width: 240, height: 240))
+        imageView.clipsToBounds = true
         
         let stackView = VerticalStackView(arrangedSubviews: [
             categoryLabel, titleLable, imageContainerView, descriptionLabel

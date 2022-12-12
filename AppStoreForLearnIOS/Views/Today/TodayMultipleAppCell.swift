@@ -30,7 +30,6 @@ class TodayMultipleAppCell: BaseTodayCell {
         layer.cornerRadius = 16
         
         
-        
         let stackView = VerticalStackView(arrangedSubviews: [
             categoryLabel,
             titleLable,
