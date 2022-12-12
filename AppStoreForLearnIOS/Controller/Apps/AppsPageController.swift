@@ -47,19 +47,16 @@ class AppsPageController: BaseListController, UICollectionViewDelegateFlowLayout
         let dispatchGroup = DispatchGroup()
         dispatchGroup.enter()
         Services.shared.fetchFreeApps { appGroup, error in
-            print("Done with Free Apps")
             dispatchGroup.leave()
             group1 = appGroup
         }
         dispatchGroup.enter()
         Services.shared.fetchFreeBooks { appGroup, error in
-            print("Done with Free Books")
             dispatchGroup.leave()
            group2 = appGroup
         }
         dispatchGroup.enter()
         Services.shared.fetchMostPlayedMusic { appGroup, error in
-            print("Done with Music")
             dispatchGroup.leave()
             group3 = appGroup
         }
@@ -69,7 +66,6 @@ class AppsPageController: BaseListController, UICollectionViewDelegateFlowLayout
             self.socialApp = apps ?? []
         }
         dispatchGroup.notify(queue: .main) {
-            print("Completed dispatch task...")
             self.activityIndicatorView.stopAnimating()
             
             if let group = group1 {

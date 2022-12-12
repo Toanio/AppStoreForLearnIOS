@@ -11,22 +11,66 @@ class TodayController: BaseListController, UICollectionViewDelegateFlowLayout {
 //    let cellId = "cellId"
 //    let multipleAppId = "multipleAppId"
     
-    let items = [
-        TodayItem.init(category: "LIFE HACK", title: "Utilizing your time", image: UIImage(named: "garden")!, description: "All the tools and apps you need to intelligently organize your life the right way.", backgroundColor: .white, cellType: .single),
-        TodayItem.init(category: "THE DAILY LIST", title: "Test-Drive These CarPlay Apps", image: UIImage(named: "garden")!, description: "", backgroundColor: .white, cellType: .multiple),
-        TodayItem.init(category: "HOLIDAYS", title: "Travel on Budget", image: UIImage(named: "holiday")!, description: "All the tools and apps you need to intelligently organize your life the right way.", backgroundColor: UIColor(red: 249/255, green: 245/255, blue: 186/255, alpha: 1), cellType: .single),
-        TodayItem.init(category: "THE DAILY LIST", title: "Test-Drive These CarPlay Apps", image: UIImage(named: "garden")!, description: "", backgroundColor: .white, cellType: .multiple),
-        
-    ]
+//    let items = [
+
+//
+//    ]
+    
+    var items = [TodayItem]()
+    
+    let activityIndicatorView: UIActivityIndicatorView = {
+        let aiv = UIActivityIndicatorView(style: .large)
+        aiv.color = .darkGray
+        aiv.startAnimating()
+        aiv.hidesWhenStopped = true
+        return aiv
+    }()
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        view.addSubview(activityIndicatorView)
+        activityIndicatorView.centerInSuperview()
+        
+        fetchData()
+        
         navigationController?.isNavigationBarHidden = true
         
         collectionView.backgroundColor = UIColor(red: 210/255, green: 210/255 , blue: 210/255, alpha: 1 )
         
         collectionView.register(TodayCell.self, forCellWithReuseIdentifier: TodayItem.CellType.single.rawValue)
         collectionView.register(TodayMultipleAppCell.self, forCellWithReuseIdentifier: TodayItem.CellType.multiple.rawValue)
+    }
+    
+    private func fetchData() {
+        let dispatchGroup = DispatchGroup()
+        var freeApp: AppsGroupResult?
+        var freeBook: AppsGroupResult?
+        dispatchGroup.enter()
+        Services.shared.fetchFreeApps { appResult, error in
+            freeApp = appResult
+            dispatchGroup.leave()
+        }
+        dispatchGroup.enter()
+        Services.shared.fetchFreeBooks { appResult, error in
+            freeBook = appResult
+            dispatchGroup.leave()
+        }
+        dispatchGroup.notify(queue: .main) {
+            print("Finishing fetch data")
+            self.activityIndicatorView.stopAnimating()
+            self.items = [
+                TodayItem.init(category: "THE DAILY LIST", title: freeApp?.feed?.title ?? "", image: UIImage(named: "garden")!, description: "", backgroundColor: .white, cellType: .multiple, apps: freeApp?.feed?.results ?? []),
+                
+                TodayItem.init(category: "THE DAILY LIST", title: freeBook?.feed?.title ?? "", image: UIImage(named: "garden")!, description: "", backgroundColor: .white, cellType: .multiple, apps: freeBook?.feed?.results ?? []),
+                
+                TodayItem.init(category: "LIFE HACK", title: "Utilizing your time", image: UIImage(named: "garden")!, description: "All the tools and apps you need to intelligently organize your life the right way.", backgroundColor: .white, cellType: .single, apps: []),
+                                 
+                TodayItem.init(category: "HOLIDAYS", title: "Travel on Budget", image: UIImage(named: "holiday")!, description: "All the tools and apps you need to intelligently organize your life the right way.", backgroundColor: UIColor(red: 249/255, green: 245/255, blue: 186/255, alpha: 1), cellType: .single, apps: []),
+            ]
+            self.collectionView.reloadData()
+        }
+        
     }
     var appFullscreenController: AppFullscreenController!
     

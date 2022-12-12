@@ -12,6 +12,8 @@ class TodayMultipleAppCell: BaseTodayCell {
         didSet {
             categoryLabel.text = todayItem.category
             titleLable.text = todayItem.title
+            multipleAppController.result = todayItem.apps
+            multipleAppController.collectionView.reloadData()
         }
     }
     let categoryLabel = UILabel(text: "LIFE HACK", font: .boldSystemFont(ofSize: 20))
