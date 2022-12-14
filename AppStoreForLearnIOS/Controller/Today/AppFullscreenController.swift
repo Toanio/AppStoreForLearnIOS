@@ -39,6 +39,46 @@ class AppFullscreenController: UIViewController, UITableViewDelegate, UITableVie
         tableView.contentInsetAdjustmentBehavior = .never
         
         tableView.contentInset = .init(top: 0, left: 0, bottom: 0, right: 0)
+        
+        setupFloatingControls()
+    }
+    
+    private func setupFloatingControls() {
+        let floatingControlView = UIView()
+        //floatingControlView.backgroundColor = .red
+        floatingControlView.layer.cornerRadius = 16
+        view.addSubview(floatingControlView)
+        let bottomPadding = UIApplication.shared.statusBarFrame.height
+        floatingControlView.anchor(top: nil, leading: view.leadingAnchor, bottom: view.bottomAnchor, trailing: view.trailingAnchor, padding: .init(top: 0, left: 16, bottom: bottomPadding, right: 16), size: .init(width: 0, height: 100))
+        
+        let blurVisualEffect = UIVisualEffectView(effect: UIBlurEffect(style: .regular))
+        floatingControlView.addSubview(blurVisualEffect)
+        blurVisualEffect.fillSuperview()
+        
+        let imageView = UIImageView(cornerRadius: 16)
+        imageView.image = todayItem?.image
+        imageView.constrainWidth(constant: 68)
+        imageView.constrainHeight(constant: 68)
+        
+        let getButton = UIButton(title: "GET")
+        getButton.setTitleColor(.white, for: .normal)
+        getButton.backgroundColor = .darkGray
+        getButton.titleLabel?.font = UIFont.boldSystemFont(ofSize: 16)
+        getButton.layer.cornerRadius = 16
+        getButton.constrainWidth(constant: 80)
+        getButton.constrainHeight(constant: 32)
+        
+        let stackView = UIStackView(arrangedSubviews: [
+            imageView,
+            VerticalStackView(arrangedSubviews: [
+                UILabel(text: "Life hack", font: .boldSystemFont(ofSize: 18)),
+                UILabel(text: "Utilizaing your Time", font: .systemFont(ofSize: 16)),
+            ], spacing: 4),
+            getButton,
+        ], customSpacing: 16)
+        floatingControlView.addSubview(stackView)
+        stackView.fillSuperview(padding: .init(top: 0, left: 16, bottom: 0, right: 16))
+        stackView.alignment = .center
     }
     
     let closeButton: UIButton = {
